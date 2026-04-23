@@ -226,3 +226,23 @@ a:focus {
   padding: 20px;
   border-top: 3px solid #e94560;
 }
+
+/* Datos del personaje organizados en dos columnas para mejorar la lectura */
+.hero-meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 8px;
+  row-gap: 6px;
+  margin-top: 20px;
+}
+
+/* Etiquetas de los datos del personaje */
+.hero-meta dt {
+  color: #e94560;
+  font-weight: bold;
+}
+
+/* Valores alineados junto a cada etiqueta */
+.hero-meta dd {
+  margin: 0;
+}
