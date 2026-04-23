@@ -1,6 +1,6 @@
 # IA_HISTORY.md — Registro de Uso de IA
 
-**Alumno/a:** Tu nombre completo  
+**Alumno/a:** Magali Aldana Suarez
 **Fecha:** 23/04/2026
 
 ---
@@ -41,7 +41,7 @@ La IA propuso usar display grid en el body con áreas para header, main y footer
 
 ### Qué debí corregir manualmente y por qué
 
-Tuve que revisar que todas las áreas declaradas en grid-template-areas tuvieran su grid-area correspondiente. Detecté que footer también necesitaba grid-area: footer para que el layout quedara completo. Además, limpié comentarios y líneas antiguas comentadas para que el CSS quedara más claro y no pareciera una mezcla entre código viejo y código corregido.
+Tuve que revisar que todas las áreas declaradas en grid-template-areas tuvieran su grid-area correspondiente. Detecté que footer también necesitaba grid-area: footer para que el layout quedara completo. Además, agregué comentarios y comenté líneas de código anteriores que ya no eran necesarias, para que el CSS reflejara claramente las correcciones realizadas y mis decisiones durante el proceso.
 
 ---
 
