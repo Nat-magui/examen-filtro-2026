@@ -186,13 +186,6 @@ select {
   margin-top: 20px;
 }
 
-/* Cada fila de información dentro de la lista descriptiva */
-.hero-meta-item {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 6px;
-}
-
 /* Etiquetas de los datos del personaje */
 .hero-meta dt {
   color: #e94560;
@@ -201,7 +194,7 @@ select {
 
 /* Valores de los datos del personaje */
 .hero-meta dd {
-  margin: 0;
+  margin: 0 0 6px 0;
 }
 
 /* Íconos de las tarjetas de estadísticas */
