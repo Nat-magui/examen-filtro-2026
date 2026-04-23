@@ -151,9 +151,9 @@ body {
 /* Se mejora contraste del costo de mana */
 .skill-cost {
   font-size: 0.8rem;
-  /* Error: bajo contraste */
-  color: #ffffff; /* antes #777 */
+  color: #fbff28;
   margin-top: 4px;
+  font-weight: bold;
 }
 
 /* Se usa Flexbox para ordenar las etiquetas de habilidades */
