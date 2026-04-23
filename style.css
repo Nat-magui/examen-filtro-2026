@@ -219,6 +219,7 @@ a:focus {
 }
 
 .footer {
+  grid-area: footer;
   background: #1a1a2e;
   color: #fff;
   text-align: center;
