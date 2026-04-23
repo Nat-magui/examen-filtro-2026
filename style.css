@@ -1,37 +1,66 @@
+/* Estilos generales del sitio */
+/* Se usa Grid para estructurar el layout principal (requisito del examen) */
 body {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  min-height: 100vh;
   font-family: Georgia, serif;
   margin: 0;
-  /* Error: bajo contraste — texto gris claro sobre fondo casi blanco */
-  color: #bbb;
-  background: #f5f5f5;
+  color: #f5f5f5; /* Mejora contraste para accesibilidad */
+  background: #0f172a;
 }
 
+/* Encabezado principal */
+/* Se define header como área del layout */
 .header {
+  grid-area: header;
   background: #1a1a2e;
   padding: 16px 40px;
   border-bottom: 3px solid #e94560;
 }
 
+/* Se usa Flexbox para alinear navegación horizontalmente */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Se mejora visibilidad del logo */
 .logo {
   color: #e94560;
   font-size: 1.4rem;
   font-weight: bold;
 }
 
-/* Error: sin flexbox, navegación con display inline-block */
-.nav-links a {
-  display: inline-block;
-  margin-right: 20px;
-  text-decoration: none;
-  /* Error: muy bajo contraste sobre fondo oscuro */
-  color: #555;
+/* Se reemplaza inline-block por Flex (mejor práctica moderna) */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
 }
 
+/* Se mejora contraste de enlaces */
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* Se asigna área main del layout */
+.main {
+  grid-area: main;
+}
+
+/* Sección principal del personaje */
 .hero {
   padding: 60px 40px;
   background: #16213e;
 }
 
+/* Avatar con estilo visual consistente */
 .avatar {
   width: 120px;
   height: 120px;
@@ -39,6 +68,14 @@ body {
   border: 3px solid #e94560;
 }
 
+/* Estilo del título movido desde inline CSS */
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff5c75;
+}
+
+/* Se mejora contraste del texto del badge para accesibilidad */
 .class-badge {
   display: inline-block;
   background: #e94560;
@@ -47,13 +84,13 @@ body {
   font-size: 0.85rem;
   margin-top: 8px;
   /* Error: texto de badge también con bajo contraste */
-  color: #aaa;
+  color: #ffffff; /* antes #aaa → bajo contraste */
 }
 
+/* Se corrige contraste del título de sección para mejorar legibilidad */
 .section-title {
   font-size: 1.8rem;
-  /* Error: color de encabezado con bajo contraste */
-  color: #ccc;
+  color: #ffffff; /* antes #ccc */
   margin-bottom: 24px;
   border-bottom: 2px solid #e94560;
   padding-bottom: 8px;
@@ -65,14 +102,15 @@ body {
 }
 
 /* Error: grilla de stats con float en lugar de CSS Grid */
+/* Se usa CSS Grid en lugar de float para ordenar las tarjetas */
 .stats-grid {
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
+/* Se elimina float porque Grid ya maneja la distribución */
 .stat-card {
-  float: left;
-  width: 22%;
-  margin: 1.5%;
   background: #16213e;
   border: 1px solid #e94560;
   padding: 20px;
@@ -81,18 +119,20 @@ body {
   border-radius: 8px;
 }
 
+/* Valor numérico de cada estadística */
 .stat-value {
   font-size: 2.5rem;
   font-weight: bold;
   color: #e94560;
 }
 
+/* Se mejora contraste del texto de cada etiqueta */
 .stat-label {
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   /* Error: bajo contraste */
-  color: #888;
+  color: #ffffff; /* antes #888 */
 }
 
 .skills-section {
@@ -108,24 +148,30 @@ body {
   background: #16213e;
 }
 
+/* Se mejora contraste del costo de mana */
 .skill-cost {
   font-size: 0.8rem;
   /* Error: bajo contraste */
-  color: #777;
+  color: #ffffff; /* antes #777 */
   margin-top: 4px;
 }
 
+/* Se usa Flexbox para ordenar las etiquetas de habilidades */
 .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-top: 8px;
 }
 
+/* Etiqueta visual de habilidad */
 .tag {
-  display: inline-block;
+  /*display: inline-block;*/
   background: #e94560;
   padding: 2px 8px;
   font-size: 0.75rem;
   border-radius: 4px;
-  margin-right: 4px;
+  /*margin-right: 4px;*/
   color: #fff;
 }
 
@@ -135,6 +181,7 @@ body {
 }
 
 /* Error: campos sin estilos accesibles, sin indicador de foco visible */
+/* Se mejora contraste y legibilidad de los campos */
 input,
 select {
   display: block;
@@ -144,18 +191,29 @@ select {
   margin-bottom: 14px;
   border: 1px solid #e94560;
   background: #16213e;
-  color: #bbb;
+  color: #ffffff; /* antes #bbb */
   box-sizing: border-box;
   border-radius: 4px;
 }
 
+/* Se agrega foco visible para accesibilidad con teclado */
+input:focus,
+select:focus,
+button:focus,
+a:focus {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
 /* Error: botón de envío como div, no como button */
+/* Se estiliza el button real del formulario */
 .btn {
   display: inline-block;
   padding: 10px 28px;
   background: #e94560;
   color: #fff;
   cursor: pointer;
+  border: none;
   border-radius: 4px;
   font-size: 1rem;
 }
@@ -166,52 +224,4 @@ select {
   text-align: center;
   padding: 20px;
   border-top: 3px solid #e94560;
-}
-
-/* Título principal del personaje */
-.hero-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #e94560;
-}
-
-/* Texto descriptivo del personaje */
-.hero-bio {
-  margin-top: 16px;
-  max-width: 600px;
-}
-
-/* Datos del personaje: nivel, alineación y origen */
-.hero-meta {
-  margin-top: 20px;
-}
-
-/* Etiquetas de los datos del personaje */
-.hero-meta dt {
-  color: #e94560;
-  font-weight: bold;
-}
-
-/* Valores de los datos del personaje */
-.hero-meta dd {
-  margin: 0 0 6px 0;
-}
-
-/* Íconos de las tarjetas de estadísticas */
-.stat-icon {
-  width: 40px;
-  border-radius: 50%;
-}
-
-/* Nombre de cada habilidad */
-.skill-name {
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #e94560;
-}
-
-/* Texto introductorio del formulario de desafío */
-.challenge-intro {
-  margin-bottom: 24px;
-  max-width: 600px;
 }
